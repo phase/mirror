@@ -6,7 +6,14 @@ jQuery is used to interact with the DOM in JavaScript. Java doesn't have a DOM, 
 I recently found out `$` could be used as an identifier in Java, and I immediately thought of jQuery. jQuery messes with the DOM, Relfection messes with Classes. Put two and two together and we've got mirror!
 
 ##Use
+The first thing you want to do is statically import Mirror.java:
+```java
+import static mirror.Mirror;
+```
 `$()` is the main method for mirror. It will get the class of what you input.
 ```java
-$(int); //returns Class of Integer
+int i = 7;
+$(i); //returns a ReflectedClass of type Integer
+
+$(i).print(); //prints 'java.lang.Integer'
 ```
