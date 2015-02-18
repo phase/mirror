@@ -21,12 +21,12 @@ public class ReflectedClass<T> implements Printable<ReflectedClass<T>> {
 	}
 	
 	public String getName(){
-//		final String s = c.getName();
-//		for(String a : s.split(".")){
-//			System.out.println(a);
-//		}
-//		return s.contains(".") ? s.split(".")[s.split(".").length-1] : s;
-		return toString();
+		final String s = c.getSimpleName();
+		for (String a : s.split(".")) {
+			System.out.println(a);
+		}
+		return s.contains(".") ? s.split(".")[s.split(".").length-1] : s;
+		//return toString();
 	}
 	
 	

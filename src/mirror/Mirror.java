@@ -15,7 +15,7 @@ public class Mirror {
 
 	public static void main(String... strings) {
 		String i = "hi there bob";
-		$(i).print();
+		System.out.println($(i).getName());
 	}
 
 }
