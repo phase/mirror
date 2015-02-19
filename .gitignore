@@ -51,3 +51,5 @@ Icon
 *.project
 /.settings
 /bin/
+#IDK
+/bin1/
