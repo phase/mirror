@@ -17,3 +17,10 @@ $(i); //returns a ReflectedClass of type Integer
 
 $(i).print(); //prints 'java.lang.Integer'
 ```
+All of the classes implement a Printable interface, so you can put `print()` anywhere in your chain to debug.
+
+To invoke a method:
+```java
+String s = "Hello World";
+$(s).getMethod("split").invoke(" "); //returns s.split(" ")
+```
