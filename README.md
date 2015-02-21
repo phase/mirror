@@ -22,5 +22,5 @@ All of the classes implement a Printable interface, so you can put `print()` any
 To invoke a method:
 ```java
 String s = "Hello World";
-$(s).getMethod("split").invoke(" "); //returns s.split(" ")
+$(s).getMethod("split").invoke(" "); //returns s.split(" ") (which happens to return void in this case)
 ```
