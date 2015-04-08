@@ -8,6 +8,8 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 
 /**
+ * Used to get Methods from ReflectedClasses.
+ * 
  * @author Jadon "Phase" Fowler on Feb 16, 2015
  */
 public class ReflectedMethod implements Printable<ReflectedMethod>{
@@ -24,6 +26,9 @@ public class ReflectedMethod implements Printable<ReflectedMethod>{
 		}
 	}
 	
+	/**
+	 * Turns the ReflectedMethod into a prtinable String.
+	 */
 	public String toString(){
 		return m.getName() + ": " + Arrays.toString(m.getParameterTypes());
 	}
@@ -37,6 +42,11 @@ public class ReflectedMethod implements Printable<ReflectedMethod>{
 		return this;
 	}
 	
+	/**
+	 * Invokes the Method.
+	 * @param b Inputs for Method being called.
+	 * @return Whatever the method returns
+	 */
 	@SuppressWarnings("unchecked")
 	public <T> T invoke(Object... b){
 		try {

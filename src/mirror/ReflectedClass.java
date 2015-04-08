@@ -18,26 +18,49 @@ public class ReflectedClass<T> implements Printable<ReflectedClass<T>> {
 		this.object = o;
 	}
 	
+	/**
+	 * @return An easy way to get the name.
+	 */
 	public String toString(){
 		return getName();
 	}
 	
+	/**
+	 * @return The simple name of the class.
+	 */
 	public String getName(){
 		return c.getSimpleName();
 	}
 	
+	/**
+	 * Gets a Method from the class w/out params
+	 * @param name Name of the method
+	 * @return A ReflectedMethod object holding the Method
+	 */
 	public ReflectedMethod getMethod(String name){
 		return new ReflectedMethod(this, c, name);
 	}
 	
+	/**
+	 * Gets the Method from the class
+	 * @param name Name of the Method
+	 * @param params Parameters for the Method
+	 * @return A ReflectedMethod object holding the Method
+	 */
 	public ReflectedMethod getMethod(String name, Class<?>...params){
 		return new ReflectedMethod(this, c, name, params); 
 	}
 	
+	/**
+	 * @return The original object passed in.
+	 */
 	protected T getObject(){
 		return object;
 	}
 	
+	/**
+	 * @return The original object's class
+	 */
 	protected Class<T> getObjectClass(){
 		return c;
 	}

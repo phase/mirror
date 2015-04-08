@@ -18,6 +18,8 @@ public class Mirror {
 		$(i).print();
 		
 		String[] a = $(i).getMethod("split", String.class).invoke(" ");
+		
+		
 		for(String b : a)
 			System.out.println(b);
 	}
