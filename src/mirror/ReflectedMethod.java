@@ -13,11 +13,13 @@ import java.util.Arrays;
  */
 public class ReflectedMethod implements Printable<ReflectedMethod>{
 	
+	private ReflectedClass<?> superClass;
 	private Method m;
 	
-	protected ReflectedMethod(Class<?> c, String name, Class<?>...params) {
+	protected ReflectedMethod(ReflectedClass<?> sc, Class<?> c, String name, Class<?>...params) {
 		try {
 			m = c.getMethod(name, params);
+			superClass = sc;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -36,9 +38,10 @@ public class ReflectedMethod implements Printable<ReflectedMethod>{
 		return this;
 	}
 	
-	public <T> T invoke(Object a, Object... b){
+	@SuppressWarnings("unchecked")
+	public <T> T invoke(Object... b){
 		try {
-			return (T) m.invoke(a, b);
+			return (T) m.invoke(superClass.getObject(), b);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -10,10 +10,12 @@ package mirror;
 public class ReflectedClass<T> implements Printable<ReflectedClass<T>> {
 	
 	Class<T> c;
+	T object;
 	
 	@SuppressWarnings("unchecked")
 	protected ReflectedClass(T o){
 		this.c = (Class<T>) o.getClass();
+		this.object = o;
 	}
 	
 	public String toString(){
@@ -25,11 +27,15 @@ public class ReflectedClass<T> implements Printable<ReflectedClass<T>> {
 	}
 	
 	public ReflectedMethod getMethod(String name){
-		return new ReflectedMethod(c, name);
+		return new ReflectedMethod(this, c, name);
 	}
 	
 	public ReflectedMethod getMethod(String name, Class<?>...params){
-		return new ReflectedMethod(c, name, params); 
+		return new ReflectedMethod(this, c, name, params); 
+	}
+	
+	protected T getObject(){
+		return object;
 	}
 	
 	protected Class<T> getObjectClass(){

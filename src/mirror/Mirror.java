@@ -16,6 +16,10 @@ public class Mirror {
 	public static void main(String... strings) {
 		String i = "hi there bob";
 		$(i).print();
+		
+		String[] a = $(i).getMethod("split", String.class).invoke(" ");
+		for(String b : a)
+			System.out.println(b);
 	}
 
 }
