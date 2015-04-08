@@ -4,6 +4,7 @@
  */
 package mirror;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
@@ -35,6 +36,13 @@ public class ReflectedMethod implements Printable<ReflectedMethod>{
 		return this;
 	}
 	
+	public <T> T invoke(Object a, Object... b){
+		try {
+			return (T) m.invoke(a, b);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
-
 }

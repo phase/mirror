@@ -24,7 +24,6 @@ public class ReflectedClass<T> implements Printable<ReflectedClass<T>> {
 		return c.getSimpleName();
 	}
 	
-	
 	public ReflectedMethod getMethod(String name){
 		return new ReflectedMethod(c, name);
 	}
