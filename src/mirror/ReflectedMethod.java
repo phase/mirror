@@ -12,14 +12,12 @@ import java.util.Arrays;
  */
 public class ReflectedMethod implements Printable<ReflectedMethod>{
 	
-	Method m;
+	private Method m;
 	
 	protected ReflectedMethod(Class<?> c, String name, Class<?>...params) {
 		try {
 			m = c.getMethod(name, params);
-		} catch (NoSuchMethodException e) {
-			e.printStackTrace();
-		} catch (SecurityException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
