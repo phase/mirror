@@ -17,11 +17,11 @@ public class Mirror {
 		String i = "hi there bob";
 		$(i).print();
 		
-		String[] a = $(i).getMethod("split", String.class).invoke(" ");
+//		String[] a = $(i).getMethod("split", String.class).invoke(" ");
+//		
+//		for(String b : a)
+//			System.out.println(b);
 		
-		
-		for(String b : a)
-			System.out.println(b);
+		System.out.println($(i).setField("hash", -5).<Integer>getField("hash"));
 	}
-
 }

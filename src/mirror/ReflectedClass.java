@@ -73,4 +73,13 @@ public class ReflectedClass<T> implements Printable<ReflectedClass<T>> {
 		System.out.println(this.toString());
 		return this;
 	}
+	
+	public <K> K getField(String name){
+		return new ReflectedField(this, c, name).<K>get();
+	}
+	
+	public ReflectedClass<T> setField(String name, Object value){
+		new ReflectedField(this, c, name).set(value);
+		return this;
+	}
 }
