@@ -37,6 +37,11 @@ public class ReflectedField implements Printable<ReflectedField> {
 	}
 
 	@Override
+	public String toString(){
+		return f.get(rc.getObject()).toString();
+	}
+
+	@Override
 	public ReflectedField print() {
 		System.out.println(this.toString());
 		return this;
