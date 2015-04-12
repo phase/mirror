@@ -22,5 +22,12 @@ All of the classes implement a Printable interface, so you can put `print()` any
 To invoke a method:
 ```java
 String s = "Hello World";
-$(s).getMethod("split").invoke(" "); //returns s.split(" ") (which happens to return void in this case)
+String[] a = $(s).getMethod("split", String.class).invoke(" "); //returns s.split(" ")
+```
+
+You can also set and get fields:
+```java
+String s = "Hello World";
+$(s).setField("hash", -5);
+int i = $(s).<Integer>getField("hash");
 ```
